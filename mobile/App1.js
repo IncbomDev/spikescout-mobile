@@ -1,13 +1,14 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const App1 = () => {
 
+const App1 = () => {
     return (
-        <View style={{backgroundColor: '#f2f2f2'}}>
+        <ScrollView>
+            <View style={{backgroundColor: '#f2f2f2'}}>
             <Text style={styles.date}>Thursday</Text>
             <Text style={styles.day}>12 October</Text>
             <View style={[styles.circle]}>
@@ -72,27 +73,50 @@ const App1 = () => {
                         <Text style={styles.placeholderText2}>14</Text>
                         <Text style={styles.placeholderTextSub2}>Waiting For Review</Text>
                 </View>
+                <View style={styles.dailyCalendar}>
+                    <Text style={styles.dateCal}>October 12</Text>
+                    <View style={{ height: 41, width: 4, borderRadius: 16, backgroundColor: '#4318FF', marginLeft: 28, marginTop: 30 }} />
+                    <Text style={styles.event1Text}>Meet w/ Sullivan</Text>
+                    <Text style={styles.event1Date}>01:00 PM - 02:00 PM</Text>
+                    <View style={{ height: 41, width: 4, borderRadius: 16, backgroundColor: '#4318FF', marginLeft: 28, marginTop: 24 }} />
+                    <Text style={styles.event2Text}>Prepare Autobalance</Text>
+                    <Text style={styles.event2Date}>02:00 PM - 03:00 PM</Text>
+                    <View style={{ height: 41, width: 4, borderRadius: 16, backgroundColor: '#4318FF', marginLeft: 28, marginTop: 24 }} />
+                    <Text style={styles.event3Text}>Talk with Team</Text>
+                    <Text style={styles.event3Date}>03:00 PM - 04:00 PM</Text>
+                    <Text style={styles.viewCal}>View Calendar</Text>
+                    <Icon name="chevron-right" style={{marginLeft:310, marginTop: -17}} size={20} color="#4318FF" />
+                </View>
+                <View style={styles.upgrade}>
+                    <View style={styles.iconOutline}>
+                    </View>
+                </View>
                 <View style={styles.footer}>
                     <Icon name="home" style={styles.icon1} size={24} color="#8b78ff" />
                     <Icon name="calendar" style={styles.icon2} size={23} />
                     <Icon name="paperclip" style={styles.icon3} size={24} />
                     <Icon name="user" style={styles.icon4} size={24} />
-
                 </View>
-                
+                <Text style={{marginTop: 1150}}> </Text>
+
         </View>
+        </ScrollView>
     );
 };
 
 
 const styles = StyleSheet.create({
+    container: {
+        flexGrow: 1, // Make sure the content grows to fill the ScrollView
+      },
+    
     date: {
         fontSize: 14,
         color: '#7F7F7F',
         textAlign: 'left',
         marginLeft: 24,
         marginTop: 60, 
-        fontWeight: 400,
+        fontWeight: 'bold',
         fontFamily: 'Helvetica',
         letterSpacing: 0.2,
     },
@@ -103,7 +127,7 @@ const styles = StyleSheet.create({
         marginLeft: 24,
         marginTop: 0,
         fontFamily: 'Helvetica',
-        fontWeight: 700,
+        fontWeight: 'bold',
         letterSpacing: 0.5,
     },
     circle: {
@@ -141,7 +165,7 @@ const styles = StyleSheet.create({
         marginLeft: 16,
         marginTop: 36,
         color: '#2F394B',
-        fontWeight: 700,
+        fontWeight: 'bold',
         fontFamily: 'Helvetica',
         letterSpacing: -0.5,
         lineHeight: 45,
@@ -224,7 +248,7 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         marginLeft: 16,
         marginTop: 25,
-        fontWeight: 700,
+        fontWeight: 'bold',
         fontFamily: 'Helvetica',
         backgroundColor: '#f2f2f2',
     },
@@ -332,34 +356,132 @@ const styles = StyleSheet.create({
     },
     footer: {
         position: 'absolute',
-        top: 700,
+        top: 1423,
         marginBottom: 20,
         backgroundColor: '#F8F6FF',
-        width: '90%',
+        width: 337,
         alignSelf: 'center',
         height: 88,
         borderRadius: 25,
     },
     icon1: {
         marginTop: 34,
-        marginLeft: 34.5,
+        marginLeft: 35,
         width: 19,
         height: 20,
     },
     icon2: {
         marginTop: -20,
-        marginLeft: 128,
+        marginLeft: 120,
         opacity: 0.1,
     },
     icon3: {
         marginTop: -22,
-        marginLeft: 224,
+        marginLeft: 210,
         opacity: 0.1,
     },
     icon4: {
         marginTop: -22,
-        marginLeft: 300,
+        marginLeft: 290,
         opacity: 0.1,
+    },
+    dailyCalendar: {
+        width: 350,
+        height: 345,
+        position: 'absolute',
+        top: 701,
+        left: 13,
+        backgroundColor: 'white',
+        borderRadius: 20,
+    },
+    dateCal: {
+        fontSize: 34,
+        fontWeight: 'bold',
+        fontFamily: 'Helvetica',
+        color: '#1B2559',
+        textAlign: 'left',
+        marginLeft: 28,
+        marginTop: 22,
+    },
+    event1Text: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        fontFamily: 'Helvetica',
+        color: '#1B2559',
+        textAlign: 'left',
+        marginLeft: 42,
+        marginTop: -40,
+    },
+    event1Date: {
+        fontSize: 12,
+        fontWeight: 'normal',
+        fontFamily: 'Helvetica',
+        color: '#1B2559',
+        textAlign: 'left',
+        marginLeft: 42,
+        marginTop: 3,
+    },
+    event2Text: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        fontFamily: 'Helvetica',
+        color: '#1B2559',
+        textAlign: 'left',
+        marginLeft: 42,
+        marginTop: -40,
+    },
+    event2Date: {
+        fontSize: 12,
+        fontWeight: 'normal',
+        fontFamily: 'Helvetica',
+        color: '#1B2559',
+        textAlign: 'left',
+        marginLeft: 42,
+        marginTop: 3,
+    },
+    event3Text: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        fontFamily: 'Helvetica',
+        color: '#1B2559',
+        textAlign: 'left',
+        marginLeft: 42,
+        marginTop: -40,
+    },
+    event3Date: {
+        fontSize: 12,
+        fontWeight: 'normal',
+        fontFamily: 'Helvetica',
+        color: '#1B2559',
+        textAlign: 'left',
+        marginLeft: 42,
+        marginTop: 3,
+    }, 
+    viewCal: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        fontFamily: 'Helvetica',
+        color: '#4318FF',
+        textAlign: 'left',
+        marginLeft: 193,
+        marginTop: 60,
+    },
+    upgrade: {
+        width: 350,
+        height: 345,
+        position: 'absolute',
+        top: 1062,
+        left: 13,
+        backgroundColor: 'white',
+        borderRadius: 20,
+    },
+    iconOutline: {
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+        marginTop: 34,
+        marginLeft: 125,
+        backgroundColor: '#2D2D2D',
     }
 });
 

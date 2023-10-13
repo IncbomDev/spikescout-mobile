@@ -11,6 +11,18 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID.",
+          "fingerprintPermission": "Allow $(PRODUCT_NAME) to use Touch ID.",
+          "fallbackLabel": "Show Passcode",
+          "cancelLabel": "Cancel",
+          "disableDeviceFallback": false
+        }
+      ]
+    ],
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -26,6 +38,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    
     "extra": {
       "eas": {
         "projectId": "f51c5aa5-6af8-442f-9f5b-2a2977293fde"
