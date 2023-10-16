@@ -89,6 +89,12 @@ const App1 = () => {
                 </View>
                 <View style={styles.upgrade}>
                     <View style={styles.iconOutline}>
+                    <Icon name="lock" size={50} color="#4318FF" style={styles.iconLock} />
+                    <Text style={styles.upgradeTo}>Upgrade to</Text>
+                    <View style={styles.proBackground}>
+                        <Text style={styles.proText}> PRO </Text>
+
+                    </View>
                     </View>
                 </View>
                 <View style={styles.footer}>
@@ -481,7 +487,34 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         marginTop: 34,
         marginLeft: 125,
-        backgroundColor: '#2D2D2D',
+        backgroundColor: '#F8F6FF',
+    },
+    iconLock: {
+        marginTop: 24,
+        marginLeft: 35,
+    },
+    upgradeTo: {
+        marginLeft: -30,
+        marginTop: 28,
+        fontSize: 20,
+        color: '#1B2559',
+        fontWeight: 'bold',
+    },
+    proBackground: {
+        width: 52,
+        height: 19,
+        borderRadius: 11,
+        backgroundColor: '#F2B252',
+        position: 'relative',
+        marginTop: -20,
+        marginLeft: 80,
+    },
+    proText: {
+        fontSize: 15,
+        color: '#1B2559',
+        marginTop: 0,
+        marginLeft: 7,
+        fontWeight: 'bold',
     }
 });
 

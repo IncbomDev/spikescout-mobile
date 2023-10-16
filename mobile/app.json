@@ -33,12 +33,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.incbom.expo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    
     "extra": {
       "eas": {
         "projectId": "f51c5aa5-6af8-442f-9f5b-2a2977293fde"

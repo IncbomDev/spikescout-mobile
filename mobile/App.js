@@ -16,7 +16,7 @@ const App = () => {
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen
               name="Onboarding"
-              component={App1}
+              component={Onboardt}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
