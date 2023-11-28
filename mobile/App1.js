@@ -3,113 +3,120 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useFonts } from 'expo-font';
+import { Preloader } from './Preloader';
 
+import {
+    useResponsiveHeight,
+    useResponsiveWidth
+} from "react-native-responsive-dimensions";
 
 const App1 = () => {
+    /*const [fonts] = useFonts({
+        'Product Sans': require('./assets/fonts/ProductSans.ttf')
+    });*/
     return (
         <ScrollView>
+            <Preloader />
             <View style={{backgroundColor: '#f2f2f2'}}>
-            <Text style={styles.date}>Thursday</Text>
-            <Text style={styles.day}>12 October</Text>
-            <View style={[styles.circle]}>
-                <Icon name="search" size={20} color="#040415" />
-            </View>
-            <Image style={styles.pfp} source={require('./assets/avatars/1.png')} />
-            <View style={[styles.notificon, {backgroundColor: 'black'}]}>
-            </View>
-            <Text style={styles.name}>Hi Nathan.</Text>
-            <Text style={styles.competitions}>1 Competition Upcoming</Text>
-            <View style={styles.compBox}>
-                <LinearGradient
-                colors={['#8B78FF', '#5451D6']}
-                style={styles.gradientBackground}
-                />
-                <Text style={styles.nextComp}>Montgomery</Text>
-                <Text style={styles.nextCompDate}>October 15</Text>
-                <Text style={styles.nextCompDateRelitive}>In 3 days</Text>
-                <View style={styles.row}>
-                    <Image style={styles.rsvpAvatars} source={require('./assets/avatars/1.png')} />
-                    <Image style={[styles.rsvpAvatars, styles.overlappingAvatar]} source={require('./assets/avatars/2.png')} />
+                <Text style={styles.date}>Thursday</Text>
+                <Text style={styles.day}>12 October</Text>
+                <View style={[styles.circle]}>
+                    <Icon name="search" size={20} color="#040415" />
                 </View>
-            </View>
-            <Text style={styles.monthlyPreview}>Monthly Preview</Text>
+                <Image style={styles.pfp} source={require('./assets/avatars/1.png')} />
+                <View style={[styles.notificon, {backgroundColor: 'black'}]}>
+                </View>
+                <Text style={styles.name}>Hi Nathan.</Text>
+                <Text style={styles.competitions}>1 Competition Upcoming</Text>
+                <View style={styles.compBox}>
+                    <LinearGradient
+                    colors={['#8B78FF', '#5451D6']}
+                    style={styles.gradientBackground}
+                    />
+                    <Text style={styles.nextComp}>Montgomery</Text>
+                    <Text style={styles.nextCompDate}>October 15</Text>
+                    <Text style={styles.nextCompDateRelitive}>In 3 days</Text>
+                    <View style={styles.row}>
+                        <Image style={styles.rsvpAvatars} source={require('./assets/avatars/1.png')} />
+                        <Image style={[styles.rsvpAvatars, styles.overlappingAvatar]} source={require('./assets/avatars/2.png')} />
+                    </View>
+                </View>
+                <Text style={styles.monthlyPreview}>Monthly Preview</Text>
                 <View style={styles.scoutingStat}> 
                     <LinearGradient
-                        colors={['#A9FFEA', '#00B288']}
-                        start={{ x: 0, y: 0 }}
-                        end={{ x: 1, y: 0 }}
-                        style={styles.gradientBackground}
+                            colors={['#A9FFEA', '#00B288']}
+                            start={{ x: 0, y: 0 }}
+                            end={{ x: 1, y: 0 }}
+                            style={styles.gradientBackground}
                     />
-                    <Text style={styles.scoutingNum}>22</Text>
-                    <Text style={styles.scoutingNumSub}>Scouting Sheets Made</Text>
+                        <Text style={styles.scoutingNum}>22</Text>
+                        <Text style={styles.scoutingNumSub}>Scouting Sheets Made</Text>
                 </View>
                 <View style={styles.compsCompleted}>
-                    <LinearGradient
-                        colors={['#FFD29D', '#FF9E2D']}
-                        start={{ x: 0, y: 0 }}
-                        end={{ x: 1, y: 0 }}
-                        style={styles.gradientBackground}
-                    />
-                    <Text style={styles.compsCompletedNum}>1</Text>
-                    <Text style={styles.compsCompletedNumSub}>Competition Completed</Text>
-                </View>
-                <View style={styles.placeholderBox1}> 
-                    <LinearGradient
-                            colors={['#FFA0BC', '#FF1B5E']}
+                        <LinearGradient
+                            colors={['#FFD29D', '#FF9E2D']}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 0 }}
                             style={styles.gradientBackground}
                         />
-                        <Text style={styles.placeholderText1}>12</Text>
-                        <Text style={styles.placeholderTextSub1}>Ongoing</Text>
+                        <Text style={styles.compsCompletedNum}>1</Text>
+                        <Text style={styles.compsCompletedNumSub}>Competition Completed</Text>
                 </View>
-                <View style={styles.placeholderBox2}>
-                    <LinearGradient
-                            colors={['#B1EEFF', '#29BAE2']}
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 1, y: 0 }}
-                            style={styles.gradientBackground}
-                        />
-                        <Text style={styles.placeholderText2}>14</Text>
-                        <Text style={styles.placeholderTextSub2}>Waiting For Review</Text>
-                </View>
+                    <View style={styles.placeholderBox1}> 
+                        <LinearGradient
+                                colors={['#FFA0BC', '#FF1B5E']}
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 1, y: 0 }}
+                                style={styles.gradientBackground}
+                            />
+                            <Text style={styles.placeholderText1}>12</Text>
+                            <Text style={styles.placeholderTextSub1}>Ongoing</Text>
+                    </View>
+                    <View style={styles.placeholderBox2}>
+                        <LinearGradient
+                                colors={['#B1EEFF', '#29BAE2']}
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 1, y: 0 }}
+                                style={styles.gradientBackground}
+                            />
+                            <Text style={styles.placeholderText2}>14</Text>
+                            <Text style={styles.placeholderTextSub2}>Waiting For Review</Text>
+                    </View>
                 <View style={styles.dailyCalendar}>
                     <Text style={styles.dateCal}>October 12</Text>
                     <View style={{ height: 41, width: 4, borderRadius: 16, backgroundColor: '#4318FF', marginLeft: 28, marginTop: 30 }} />
-                    <Text style={styles.event1Text}>Meet w/ Sullivan</Text>
-                    <Text style={styles.event1Date}>01:00 PM - 02:00 PM</Text>
-                    <View style={{ height: 41, width: 4, borderRadius: 16, backgroundColor: '#4318FF', marginLeft: 28, marginTop: 24 }} />
-                    <Text style={styles.event2Text}>Prepare Autobalance</Text>
-                    <Text style={styles.event2Date}>02:00 PM - 03:00 PM</Text>
-                    <View style={{ height: 41, width: 4, borderRadius: 16, backgroundColor: '#4318FF', marginLeft: 28, marginTop: 24 }} />
-                    <Text style={styles.event3Text}>Talk with Team</Text>
-                    <Text style={styles.event3Date}>03:00 PM - 04:00 PM</Text>
-                    <Text style={styles.viewCal}>View Calendar</Text>
-                    <Icon name="chevron-right" style={{marginLeft:310, marginTop: -17}} size={20} color="#4318FF" />
-                </View>
-                <View style={styles.upgrade}>
-                    <View style={styles.iconOutline}>
-                    <Icon name="lock" size={50} color="#4318FF" style={styles.iconLock} />
-                    <Text style={styles.upgradeTo}>Upgrade to</Text>
-                    <View style={styles.proBackground}>
-                        <Text style={styles.proText}> PRO </Text>
-
-                    </View>
-                    </View>
-                </View>
-                <View style={styles.footer}>
-                    <Icon name="home" style={styles.icon1} size={24} color="#8b78ff" />
-                    <Icon name="calendar" style={styles.icon2} size={23} />
-                    <Icon name="paperclip" style={styles.icon3} size={24} />
-                    <Icon name="user" style={styles.icon4} size={24} />
-                </View>
+                        <Text style={styles.event1Text}>Meet w/ Sullivan</Text>
+                        <Text style={styles.event1Date}>01:00 PM - 02:00 PM</Text>
+                        <View style={{ height: 41, width: 4, borderRadius: 16, backgroundColor: '#4318FF', marginLeft: 28, marginTop: 24 }} />
+                            <Text style={styles.event2Text}>Prepare Autobalance</Text>
+                            <Text style={styles.event2Date}>02:00 PM - 03:00 PM</Text>
+                            <View style={{ height: 41, width: 4, borderRadius: 16, backgroundColor: '#4318FF', marginLeft: 28, marginTop: 24 }} />
+                                <Text style={styles.event3Text}>Talk with Team</Text>
+                                <Text style={styles.event3Date}>03:00 PM - 04:00 PM</Text>
+                                <Text style={styles.viewCal}>View Calendar</Text>
+                                <Icon name="chevron-right" style={{marginLeft:310, marginTop: -17}} size={20} color="#4318FF" />
+                            </View>
+                            <View style={styles.upgrade}>
+                                <View style={styles.iconOutline}>
+                                    <Icon name="lock" size={50} color="#4318FF" style={styles.iconLock} />
+                                    <Text style={styles.upgradeTo}>Upgrade to</Text>
+                                        <View style={styles.proBackground}>
+                                            <Text style={styles.proText}> PRO </Text>
+                                        </View>
+                                    </View>
+                                </View>
+                                <View style={styles.footer}>
+                                    <Icon name="home" style={styles.icon1} size={24} color="#8b78ff" />
+                                    <Icon name="calendar" style={styles.icon2} size={23} />
+                                    <Icon name="paperclip" style={styles.icon3} size={24} />
+                                    <Icon name="user" style={styles.icon4} size={24} />
+                                </View>
                 <Text style={{marginTop: 1150}}> </Text>
-
-        </View>
+            </View>
         </ScrollView>
     );
 };
-
 
 const styles = StyleSheet.create({
     container: {
@@ -120,8 +127,8 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#7F7F7F',
         textAlign: 'left',
-        marginLeft: 24,
-        marginTop: 60, 
+        marginLeft: useResponsiveWidth(5),
+        marginTop: useResponsiveHeight(7.5), 
         fontWeight: 'bold',
         fontFamily: 'Helvetica',
         letterSpacing: 0.2,
@@ -142,8 +149,8 @@ const styles = StyleSheet.create({
         borderRadius: 28, // Half of the width and height to create a circle
         borderWidth: 1, // Width of the outline
         borderColor: '#adadad', // Color of the outline
-        justifyContent: 'center', // Optional: Center the content vertically
-        alignItems: 'center', // Optional: Center the content horizontally
+        justifyContent: 'center',
+        alignItems: 'center',
         position: 'absolute',
         right: 96,
         top: 60,

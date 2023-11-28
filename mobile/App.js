@@ -16,13 +16,13 @@ const App = () => {
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen
               name="Onboarding"
-              component={Onboardt}
+              component={App1}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
         ) : null}
       </NavigationContainer>
     </>
-  );
+  ); 
 };
 export default App;
