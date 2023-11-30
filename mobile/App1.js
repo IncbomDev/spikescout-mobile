@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, LayoutAnimation } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { useFonts } from 'expo-font';
 import { Preloader } from './Preloader';
 import { useCallback } from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 
 import {
     useResponsiveHeight,
@@ -71,15 +70,41 @@ const App1 = ({ navigation }) => {
         return (percent / 100) * height;
     }
 
+    const user = {
+        fName: 'Nathan',
+        lName: 'Edgington'
+    }
+
     return (
-        <ScrollView>
+        <ScrollView style={{border: '1px red solid'}}>
             <PanGestureHandler onSwipePerformed={onSwipePerformed} gestureStyle={styles.swipesGestureContainer}>
                 <View style={{ height: height, width: width }}>
                     <View style={{ height: percentHeight(20), width: percentWidth(100), paddingTop: percentHeight(10) }}>
                         <Text style={{ fontSize: percentFontSize(10), textAlign: 'center', fontFamily: 'Rounded Mplus 1c', color: '#7F7F7F', fontWeight: 400, position: 'absolute', top: percentHeight(12), paddingLeft: percentWidth(5) }}>Thursday</Text>
                         <Text style={{ fontSize: percentFontSize(15), textAlign: 'center', fontFamily: 'Rounded Mplus 1c', color: '#040415', fontWeight: 900, position: 'absolute', top: percentHeight(15), paddingTop: percentHeight(7.5), paddingLeft: percentWidth(5) }}>12 October</Text>
-                        <Text style={{ fontSize: percentFontSize(17.5), textAlign: 'center', fontFamily: 'Rounded Mplus 1c', color: '#2F394B', fontWeight: 900, position: 'absolute', top: percentHeight(50), paddingLeft: percentWidth(3) }}>Hi Nathan.</Text>
+                        <Text style={{ fontSize: percentFontSize(17.5), textAlign: 'center', fontFamily: 'Rounded Mplus 1c', color: '#2F394B', fontWeight: 900, position: 'absolute', top: percentHeight(50), paddingLeft: percentWidth(3) }}>Hi, {user.fName}</Text>
                         <Text style={{ fontSize: percentFontSize(10), textAlign: 'center', fontFamily: 'Rounded Mplus 1c', color: '#7F7F7F', fontWeight: 400, position: 'absolute', top: percentHeight(70), paddingLeft: percentWidth(3) }}>1 Competition Upcoming.</Text>
+                        <View style={{ fontSize: percentFontSize(10), textAlign: 'left', fontFamily: 'Rounded Mplus 1c', color: '#000000', fontWeight: 200, position: 'absolute', top: percentHeight(90), paddingTop: percentHeight(7.5), paddingLeft: percentWidth(3), left: percentWidth(3), width: percentWidth(94), height: percentHeight(40), backgroundColor: 'purple', borderRadius: percentHeight(7) }}>
+                            <Text style={{ color: 'black' }}>Montgomery</Text>
+                        </View>
+                        <View style={{ height: percentHeight(1000 )}} />
+                    </View>
+                    <View style={{ 
+                        height: percentHeight(15),
+                        width: width,
+                        flexDirection: 'row',
+                        justifyContent: 'space-around',
+                        alignItems: 'center',
+                        position: 'fixed',
+                        marginTop: percentHeight(100),
+                        backgroundColor: '#fff',
+                        borderTopWidth: 1, 
+                        borderTopColor: '#ccc', 
+                    }}>
+                        <Icon name="home" />
+                        <Icon name="calendar-outline"/>
+                        <Icon name="chatbubble-ellipses-outline"/>
+                        <Icon name="person-circle-outline"/>
                     </View>
                 </View>
             </PanGestureHandler>
