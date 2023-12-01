@@ -5,6 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import App1 from "./App1";
 import Onboard from "./Onboard";
+import Login from "./Login";
+import Test from "./Test";
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
@@ -21,7 +23,7 @@ const App = () => {
             />
             <Stack.Screen
               name="Home"
-              component={App1}
+              component={Test}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

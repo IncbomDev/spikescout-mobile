@@ -12,6 +12,7 @@
     "@expo/ngrok": "^4.1.0",
     "@expo/webpack-config": "^19.0.0",
     "@react-navigation/native-stack": "^6.9.14",
+    "appwrite": "^13.0.1",
     "expo": "~49.0.13",
     "expo-font": "~11.4.0",
     "expo-haptics": "~12.4.0",
