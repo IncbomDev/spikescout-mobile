@@ -16,14 +16,19 @@ const App = () => {
       <NavigationContainer>
         {hideSplashScreen ? (
           <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
-            <Stack.Screen
+            {/* <Stack.Screen
               name="Onboarding"
               component={Onboard}
               options={{ headerShown: false }}
-            />
-            <Stack.Screen
+            /> */}
+            {/* <Stack.Screen
               name="Home"
               component={Test}
+              options={{ headerShown: false }}
+            /> */}
+            <Stack.Screen
+              name="App"
+              component={App1}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
