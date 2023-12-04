@@ -56,7 +56,7 @@ const App1 = ({ navigation }) => {
             <GestureHandlerRootView>
                 <ScrollView>
                     {/* <PanGestureHandler onSwipePerformed={onSwipePerformed} gestureStyle={styles.swipesGestureContainer}> */}
-                        <View style={{ height: height, width: width }}>
+                        <View style={{ height: percentHeight(85), width: width }}>
                             <LinearGradient
                                 colors={['#fff', '#F8F6FF ']}
                                 start={{ x: 0, y: 0 }}
@@ -145,32 +145,27 @@ const App1 = ({ navigation }) => {
                                             </View>
                                         </View>
                                     </View>
-                                    <View style={{ fontSize: percentFontSize(3), textAlign: 'left', fontFamily: 'Rounded Mplus 1c', color: '#000000', fontWeight: 200, position: 'absolute', top: percentHeight(90), paddingLeft: percentWidth(3), left: percentWidth(3), width: percentWidth(94), height: percentHeight(40), backgroundColor: 'purple', borderRadius: percentHeight(7) }}>
-                                        <Text style={{ color: 'black' }}>Montgomery</Text>
-                                    </View>
                                     <View style={{ height: percentHeight(1000 )}} />
-                                </View>
-                                <View style={{ 
-                                    height: percentHeight(15),
-                                    width: width,
-                                    flexDirection: 'row',
-                                    justifyContent: 'space-around',
-                                    alignItems: 'center',
-                                    position: 'fixed',
-                                    marginTop: percentHeight(100),
-                                    backgroundColor: '#fff',
-                                    borderTopWidth: 1, 
-                                    borderTopColor: '#ccc', 
-                                }}>
-                                    <Icon name="home" />
-                                    <Icon name="calendar-outline"/>
-                                    <Icon name="chatbubble-ellipses-outline"/>
-                                    <Icon name="person-circle-outline"/>
                                 </View>
                             </LinearGradient>
                         </View>
                     {/* </PanGestureHandler> */}
                 </ScrollView>
+                <View style={{ 
+                    height: percentHeight(15),
+                    width: width,
+                    flexDirection: 'row',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    backgroundColor: '#eeeeee',
+                    borderTopWidth: 1,
+                    borderTopColor: '#ccc',
+                }}>
+                    <Icon style={{ color: 'black' }}name="home" />
+                    <Icon name="calendar-outline"/>
+                    <Icon name="chatbubble-ellipses-outline"/>
+                    <Icon name="person-circle-outline"/>
+                </View>
             </GestureHandlerRootView>
         </SafeAreaView>
     );
