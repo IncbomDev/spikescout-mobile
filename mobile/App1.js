@@ -47,8 +47,8 @@ const App1 = ({ navigation }) => {
     }
 
     const user = {
-        fName: 'Nathan',
-        lName: 'Edgington'
+        fName: 'Gaylord',
+        lName: 'Edge'
     }
 
     return (
